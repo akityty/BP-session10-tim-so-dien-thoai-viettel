@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regexpViettelDauSo086 = /^[0][8][6][0-9]{7}$/;
+    let regexpViettelDauSo09 = /^[0][9][678][0-9]{7}$/;
+    let regexpViettelDauso03 = /^[0][3][2-9][0-9]{7}$/;
+    let arr = ["0902099946","0977420101","0836868657","0944989820","0975450606","0387566461","0862530601","0936696927"];
+    let viettelArr = [];
+    function checkNumberAndAddNumber(arr,regexp) {
+        for (let i = 0; i < arr.length; i++) {
+            if (regexp.test(arr[i])){
+                viettelArr.push(arr[i]);
+                arr.splice(arr[i],1);
+            }
+                }
+    }
+    checkNumberAndAddNumber(arr,regexpViettelDauso03);
+    checkNumberAndAddNumber(arr,regexpViettelDauSo09);
+    checkNumberAndAddNumber(arr,regexpViettelDauSo086);
+    console.log(viettelArr);
+</script>
+</body>
+</html>
